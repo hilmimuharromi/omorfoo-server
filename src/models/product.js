@@ -9,12 +9,32 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    stock: Number,
-    minimalStock: Number,
-    price: Number,
-    purchasePrice: Number,
-    brand: String,
-    type: String
+    stock: {
+        type: Number,
+        required: true,
+    },
+    minimalStock: {
+        type: Number,
+        required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    capitalPrice: {
+        type: Number,
+        required: true,
+    },
+    brand: {
+        type: String,
+        required: true,
+    },
+    type: {
+        type: String,
+        required: true,
+    }
+}, {
+    timestamps: new Date()
 });
 
 

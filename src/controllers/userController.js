@@ -23,7 +23,7 @@ const Login = async (req, reply) => {
             console.log(findUser)
             const isVerif = verifyPassword(password, findUser.password)
             if (isVerif) {
-                const token = await reply.jwtSign({ findUser })
+                const token = await reply.jwtSign({ user: findUser })
                 reply.code(201).send({ token })
             } else {
                 reply.code(400).send('failed login')
